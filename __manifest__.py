@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Agency',
+    'name': 'Estate Agency',
     'version': '1.0',
     'category': 'Education',
     'summary': 'Agency Management',
@@ -15,7 +15,7 @@
     """,
     'author': 'Group DAM2 - Course 2025-2026',
     'website': 'http://www.infomila.info',
-    'depends': ['base'],
+    'depends': ['base', 'base_location', 'sale'],
     'data': ['views/agency_views.xml'],
     'demo': [],
     'installable': True,
