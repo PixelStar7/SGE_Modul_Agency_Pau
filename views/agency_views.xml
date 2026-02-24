@@ -5,6 +5,9 @@
     <!-- Estructura de navegació Superior -->
     <menuitem name="Agency" id="menu_root"/>
 
+    <!-- Configuration Menu -->
+    <menuitem name="Configuration" id="menu_configuration" sequence="100" parent="menu_root"/>
+
     <!-- Vista Llista de Propietats -->
     <record model="ir.ui.view" id="agency_property_list">
         <field name="name">agency.property.list</field>
@@ -32,10 +35,9 @@
     </record>
 
     <!-- Submenu de Property -->
-    <menuitem name="Properties" id="menu_properties" parent="menu_root" action="agency_property_action"/>
+    <menuitem name="Properties" id="menu_properties" parent="menu_root" sequence="10" action="agency_property_action"/>
 
-    <!-- Configuration Menu -->
-    <menuitem name="Configuration" id="menu_configuration" parent="menu_root"/>
+    
 
     <!-- Vista Llista de Types -->
     <record model="ir.ui.view" id="agency_type_list">
