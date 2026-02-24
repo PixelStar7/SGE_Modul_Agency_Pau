@@ -26,9 +26,9 @@ class AgencyProperty(models.Model):
 
     owner_id = fields.Many2one('res.partner', 'Client', required=True)
 
-    element_ids = fields.One2many('agency.element', 'property_id', 'Elements', readonly=True)
+    element_ids = fields.One2many('agency.element', 'property_id', 'Elements', required=True)
 
-    portal_ids = fields.Many2many('agency.portal', 'agency_property_portal_rel', 'property_id', 'portal_id', 'Portals', readonly=True)
+    portal_ids = fields.Many2many('agency.portal', 'agency_property_portal_rel', 'property_id', 'portal_id', 'Portals', required=True)
 
     @api.depends('address1', 'zip_id')
     def _compute_display_name(self):
