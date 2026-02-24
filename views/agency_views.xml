@@ -16,7 +16,7 @@
             <list string="Properties" decoration-success="active==True" decoration-danger="active==False">
                 <field name="active" column_invisible="1"/>
 
-                <field name="address1"></field>
+                <field name="address1" string="Address"></field>
                 <field name="zip_id" string="Zip Code"></field>
                 <field name="type_id" string="Type"></field>
                 <field name="state"></field>
@@ -24,6 +24,70 @@
                 <field name="owner_id" string="Owner"></field>
                 <field name="owner_phone" optional="hide"></field>
             </list>
+        </field>
+    </record>
+
+    <!-- Vista Formulari de Propietats -->
+    <record model="ir.ui.view" id="agency_property_form">
+        <field name="name">agency.property.form</field>
+        <field name="model">agency.property</field>
+        <field name="arch" type="xml">
+            <form string="Property">
+                <sheet>
+                    <group> <!-- Tota la pantalla -->
+                        <group>
+                            <field name="address1"></field>
+                            <field name="address2"></field>
+                            <field name="zip_id" string="Location"></field>
+
+                            <group>
+                                <field name="owner_id" string="Owner"></field>
+                                <field name="owner_phone" string="Phone"></field>
+                            </group>
+                            
+                            <group>
+                                <field name="type_id" string="Type"></field>
+                                <field name="state"></field>
+                                <field name="area" string="Area(m2)"></field>
+                            </group>
+                        </group>
+
+                        <group>
+                            <separator string="Description"></separator>
+                            <field name="description" nolabel="1" colspan="4" widget="html" options="{'resizable':true}" placeholder="Lorem ipsum sit amet bokoblin..."></field>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Elements">
+                            <field name="element_ids" nolabel="1">
+                                <list>
+                                    <field name="name"></field>
+                                    <field name="area" string="Area(m2)"></field>
+                                </list>
+
+                                <form>
+                                    <group>
+                                        <field name="name"></field>
+                                        <field name="area" string="Area(m2)"></field>
+                                    </group>
+                                    <field name="photo" widget="image" class="oe_avatar"></field>
+                                </form>
+                            </field>
+                        </group>
+
+                        <group string="Real Estate Portals">
+                            <field name="portal_ids" nolabel="1">
+                                <list>
+                                    <field name="name"></field>
+                                    <field name="phone"></field>
+                                    <field name="web"></field>
+                                </list>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
