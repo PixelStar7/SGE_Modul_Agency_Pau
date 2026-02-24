@@ -35,31 +35,30 @@
             <form string="Property">
                 <sheet>
                     <group>
-                        <group string="Data" col="8">
-                            <field name="address1"></field>
-                            <field name="address2"></field>
-                            <field name="zip_id" string="Location"></field>
+                        <group string="DATA">
+                            <field name="address1" colspan="2"></field>
+                            <field name="address2" colspan="2"></field>
+                            <field name="zip_id" string="Location" colspan="2"></field>
 
-                            <group col="4">
+                            <group>
                                 <field name="owner_id" string="Owner"></field>
                                 <field name="owner_phone" string="Phone"></field>
                             </group>
                             
-                            <group col="4">
+                            <group>
                                 <field name="type_id" string="Type"></field>
                                 <field name="state"></field>
                                 <field name="area" string="Area(m2)"></field>
                             </group>
                         </group>
 
-                        <group>
-                            <separator string="Description"></separator>
+                        <group string="DESCRIPTION">
                             <field name="description" nolabel="1" colspan="4" widget="html" options="{'resizable':true}" placeholder="Lorem ipsum sit amet bokoblin..."></field>
                         </group>
                     </group>
 
                     <group>
-                        <group string="Elements">
+                        <group string="ELEMENTS">
                             <field name="element_ids" nolabel="1">
                                 <list>
                                     <field name="name"></field>
@@ -67,21 +66,23 @@
                                 </list>
 
                                 <form>
-                                    <group>
-                                        <field name="name"></field>
-                                        <field name="area" string="Area(m2)"></field>
-                                    </group>
-                                    <field name="photo" widget="image" class="oe_avatar"></field>
+                                    <sheet>
+                                        <field name="photo" widget="image" class="oe_avatar"></field>
+                                        <group>
+                                            <field name="name"></field>
+                                            <field name="area" string="Area(m2)"></field>
+                                        </group>
+                                    </sheet>
                                 </form>
                             </field>
                         </group>
 
-                        <group string="Real Estate Portals">
+                        <group string="PORTALS">
                             <field name="portal_ids" nolabel="1" widget="many2many">
-                                <list>
+                                <list create="0">
                                     <field name="name"></field>
                                     <field name="phone"></field>
-                                    <field name="web"></field>
+                                    <field name="web" widget="url"></field>
                                 </list>
                             </field>
                         </group>
