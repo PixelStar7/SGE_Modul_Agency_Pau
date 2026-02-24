@@ -5,7 +5,7 @@
     <!-- Estructura de navegació Superior -->
     <menuitem name="Agency" id="menu_root"/>
 
-    <menuitem name="Configuration" id="menu_configuration" parent="menu_root" sequence="99"/>
+    <menuitem name="Configuration" id="menu_configuration" parent="menu_root"/>
 
     <!-- Vista Llista de Propietats -->
     <record model="ir.ui.view" id="agency_property_list">
@@ -14,7 +14,7 @@
         <field name="arch" type="xml">
             <list string="Properties" decoration-success="active==True" decoration-danger="active==False">
                 <field name="active" column_invisible="1"/>
-                
+
                 <field name="address1"></field>
                 <field name="zip_id" string="Zip Code"></field>
                 <field name="type_id" string="Type"></field>
