@@ -34,21 +34,23 @@
         <field name="arch" type="xml">
             <form string="Property">
                 <sheet>
-                    <group col="8">
-                        <group string="DATA" col="4">
-                            <field name="address1" colspan="2"></field>
-                            <field name="address2" colspan="2"></field>
-                            <field name="zip_id" string="Location" colspan="2"></field>
+                    <group>
+                        <group string="DATA">
+                            <group colspan="2">
+                                <field name="address1"/>
+                                <field name="address2"/>
+                                <field name="zip_id" string="Location"/>
+                            </group>
 
-                            <group col="2">
-                                <field name="owner_id" string="Owner"></field>
-                                <field name="owner_phone" string="Phone"></field>
+                            <group>
+                                <field name="owner_id" string="Owner"/>
+                                <field name="owner_phone" string="Phone"/>
                             </group>
                             
-                            <group col="2">
-                                <field name="type_id" string="Type"></field>
-                                <field name="state"></field>
-                                <field name="area" string="Area(m2)"></field>
+                            <group>
+                                <field name="type_id" string="Type"/>
+                                <field name="state"/>
+                                <field name="area" string="Area(m2)"/>
                             </group>
                         </group>
 
