@@ -3,19 +3,83 @@
 <odoo>
 
     <!-- Estructura de navegació Superior -->
-    
+    <menuitem name="Agency" id="menu_root"/>
 
-    <!-- GESTIÓ DE CURSOS -->
+    <menuitem name="Configuration" id="menu_configuration" parent="menu_root" sequence="99"/>
 
-    <!-- Vista Llista de Cursos-->
-    
+    <!-- Vista Llista de Propietats -->
+    <record model="ir.ui.view" id="agency_property_list">
+        <field name="name">agency.property.list</field>
+        <field name="model">agency.property</field>
+        <field name="arch" type="xml">
+            <list string="Properties" decoration-success="active==True" decoration-danger="active==False">
+                <field name="active" column_invisible="1"/>
+                
+                <field name="address1"></field>
+                <field name="zip_id" string="Zip Code"></field>
+                <field name="type_id" string="Type"></field>
+                <field name="state"></field>
+                <field name="area" string="Area(m2)"></field>
+                <field name="owner_id" string="Owner"></field>
+                <field name="owner_phone" optional="hide"></field>
+            </list>
+        </field>
+    </record>
 
-    <!-- Vista Formulari de Cursos -->
-    
+    <!-- Acció de Property -->
+    <record model="ir.actions.act_window" id="agency_property_action">
+        <field name="name">Properties</field>
+        <field name="res_model">agency.property</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
-    <!-- Acció de Cursos -->
-    
+    <!-- Submenu de Property -->
+    <menuitem name="Properties" id="menu_properties" parent="menu_root" sequence="99" action="agency_property_action"/>
 
-    <!-- Submenu de Cursos -->
+    <!-- Vista Llista de Types -->
+    <record model="ir.ui.view" id="agency_type_list">
+        <field name="name">agency.type.list</field>
+        <field name="model">agency.type</field>
+        <field name="arch" type="xml">
+            <list string="Property Types" editable="bottom">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acció de Types -->
+    <record model="ir.actions.act_window" id="agency_type_action">
+        <field name="name">PropertyTypes</field>
+        <field name="res_model">agency.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Submenu de Types -->
+    <menuitem name="Property Types" id="menu_types" parent="menu_configuration" action="agency_type_action"/>
+
+
+    <!-- Vista Llista de Portal -->
+    <record model="ir.ui.view" id="agency_portal_list">
+        <field name="name">agency.portal.list</field>
+        <field name="model">agency.portal</field>
+        <field name="arch" type="xml">
+            <list string="Portals" editable="bottom">
+                <field name="name"></field>
+                <field name="phone"></field>
+                <field name="web" widget="url"></field>
+                <field name="q_properties"></field>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acció de Portal -->
+    <record model="ir.actions.act_window" id="agency_portal_action">
+        <field name="name">Portals</field>
+        <field name="res_model">agency.portal</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Submenu de Types -->
+    <menuitem name="Imm. Portals" id="menu_portals" parent="menu_configuration" action="agency_portal_action"/>
 
 </odoo>
